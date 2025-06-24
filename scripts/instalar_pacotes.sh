@@ -77,6 +77,7 @@ libreoffice-fresh
 libreoffice-fresh-pt
 fastfetch
 code
+jdk-openjdk
 flatpak
 )
 
