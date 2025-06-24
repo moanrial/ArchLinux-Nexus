@@ -14,10 +14,10 @@ info "A ativar o repositorio [Multilib]"
 sudo cp /etc/pacman.conf /etc/pacman.conf.bak
 
 # Ativa o repositório multilib
-sed -i '/^\[multilib\]/,/^Include/ s/^#//' /etc/pacman.conf
+sudo sed -i '/^\[multilib\]/,/^Include/ s/^#//' /etc/pacman.conf
 
 # Atualiza a base de dados dos pacotes
-pacman -Sy
+sudo pacman -Sy
 
 info "Repositório [multilib] ativado com sucesso."
 
