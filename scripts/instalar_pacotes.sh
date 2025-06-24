@@ -34,6 +34,23 @@ sucesso "Instalação concluida."
 info "[1/2] A instalar pacotes dos repositorios Core,Extra,Multilib."
 
 pacotes=(
+# GNOME
+gnome
+gnome-tweaks
+wget
+wpa_supplicant
+xdg-utils
+# Controlador gráfico
+libva-mesa-driver
+mesa
+vulkan-radeon
+xf86-video-amdgpu
+xf86-video-ati
+xorg-server
+xorg-xinit
+# Interface gráfica de inicio de sessão
+gdm
+# Custom
 amd-ucode
 linux-firmware-amdgpu
 linux-headers
