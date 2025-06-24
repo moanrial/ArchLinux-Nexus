@@ -26,7 +26,7 @@ info "A instalar YAY"
 sudo pacman -S --needed --noconfirm base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si --noconfirm
+sudo makepkg -si --noconfirm
 cd ..
 sudo rm -r yay
 sucesso "Instalação concluida."
