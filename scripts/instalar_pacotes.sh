@@ -21,15 +21,20 @@ sudo pacman -Sy
 
 info "Repositório [multilib] ativado com sucesso."
 
-# Instalar YAY para ter acesso ao AUR
+if command -v yay &> /dev/null; then
+sucesso "YAY já está instalado."
+else
 info "A instalar YAY"
 sudo pacman -S --needed --noconfirm base-devel git
+
 git clone https://aur.archlinux.org/yay.git
-cd yay
+cd yay || exit 1
 makepkg -si --noconfirm
 cd ..
 sudo rm -r yay
-sucesso "Instalação concluida."
+
+sucesso "Instalação concluída."
+fi
 
 info "[1/2] A instalar pacotes dos repositorios Core,Extra,Multilib."
 
