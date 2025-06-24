@@ -72,7 +72,7 @@ pacotesAUR=(
 gnome-shell-extension-gsconnect
 gnome-shell-extension-dash-to-dock
 gnome-shell-extension-gamemode-git
-droidcam-git
+droidcam
 autenticacao-gov-pt
 plugin-autenticacao-gov-pt
 )
@@ -88,6 +88,7 @@ done
 
 sucesso "Finalizado."
 sleep 1.5
+read
 }
 
 #PACOTES FEDORA QUE NAO EXISTEM NO ARCH
