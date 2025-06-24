@@ -30,7 +30,6 @@ makepkg -si --noconfirm
 cd ..
 sudo rm -r yay
 sucesso "Instalação concluida."
-}
 
 info "[1/2] A instalar pacotes dos repositorios Core,Extra,Multilib."
 
