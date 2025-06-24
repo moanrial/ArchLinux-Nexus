@@ -21,6 +21,8 @@ pacman -Sy
 
 info "Repositório [multilib] ativado com sucesso."
 
+info "[1/2] A instalar pacotes dos repositorios Core,Extra,Multilib."
+
 pacotes=(
 amd-ucode
 linux-firmware-amdgpu
@@ -63,6 +65,8 @@ fi
 done
 
 # AUR
+
+info "[2/2] A instalar pacotes AUR."
 
 pacotesAUR=(
 gnome-shell-extension-gsconnect
