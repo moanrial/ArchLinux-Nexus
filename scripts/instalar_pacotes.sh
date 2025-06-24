@@ -73,7 +73,6 @@ gnome-shell-extension-gsconnect
 gnome-shell-extension-dash-to-dock
 gnome-shell-extension-gamemode-git
 droidcam-git
-v4l2loopback-dkms-git
 autenticacao-gov-pt
 plugin-autenticacao-gov-pt
 )

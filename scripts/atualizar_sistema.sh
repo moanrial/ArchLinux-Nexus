@@ -36,5 +36,6 @@ info "A ordenar mirrors por velocidade"
 rankmirrors
 
 sucesso "Sistema atualizado e limpo com sucesso."
-sleep 1.5
+sleep 1.
+read
 }
