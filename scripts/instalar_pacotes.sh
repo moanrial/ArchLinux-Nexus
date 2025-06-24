@@ -8,10 +8,10 @@ info "Instalação cancelada pelo utilizador."
 return
 fi
 
-info "A ativar o repositorio [MULTILIB]"
+info "A ativar o repositorio [Multilib]"
 
 # Faz backup do arquivo original
-cp /etc/pacman.conf /etc/pacman.conf.bak
+sudo cp /etc/pacman.conf /etc/pacman.conf.bak
 
 # Ativa o repositório multilib
 sed -i '/^\[multilib\]/,/^Include/ s/^#//' /etc/pacman.conf
