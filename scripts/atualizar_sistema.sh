@@ -16,13 +16,24 @@ info "A remover pacotes órfãos (desnecessários)..."
 echo "[1/2] A remover dependências órfãs..."
 orphans=$(pacman -Qdtq)
 if [[ -n "$orphans" ]]; then
-  sudo pacman -Rns --noconfirm $orphans
+sudo pacman -Rns --noconfirm $orphans
 else
-  info "Nenhum pacote órfão encontrado."
+info "Nenhum pacote órfão encontrado."
 fi
 
 info "[2/2] A limpar cache de pacotes antigos..."
+
+# Verificar se o comando paccache existe
+if ! command -v paccache >/dev/null 2>&1; then
+info "O comando 'paccache' não foi encontrado. A instalar 'pacman-contrib'..."
+sudo pacman -S --noconfirm pacman-contrib
+fi
+
+# Executar a limpeza com segurança (manter 2 versões)
 sudo paccache -r -k2
+
+info "A ordenar mirrors por velocidade"
+rankmirrors
 
 sucesso "Sistema atualizado e limpo com sucesso."
 sleep 1.5

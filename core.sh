@@ -16,7 +16,6 @@ source "./utils.sh"
 
 # Configurar ambiente
 export LANG=pt_PT.UTF-8
-export LC_ALL=pt_PT.UTF-8
 set -euo pipefail
 apagar_log_automaticamente=false
 mkdir -p "$(dirname "$LOG_FILE")"
