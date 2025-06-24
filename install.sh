@@ -6,7 +6,7 @@ export INSTALLED_BY_INSTALL_SH=true
 
 # Diretório temporário
 TMP_DIR="/tmp/archlinux-nexus"
-ZIP_URL="https://github.com/moanrial/fedora-nexus/archive/refs/heads/main.zip"
+ZIP_URL="https://github.com/moanrial/ArchLinux-Nexus/archive/refs/heads/main.zip"
 DIR_EXTRAIDO="$TMP_DIR/archlinux-nexus"
 
 # Verificações
