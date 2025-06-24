@@ -26,7 +26,7 @@ info "A instalar YAY"
 sudo pacman -S --needed --noconfirm base-devel git
 git clone https://aur.archlinux.org/yay.git
 cd yay
-sudo makepkg -si --noconfirm
+makepkg -si --noconfirm
 cd ..
 sudo rm -r yay
 sucesso "Instalação concluida."
@@ -63,7 +63,7 @@ code
 flatpak
 )
 
-# Pacote normal
+# Pacotes normais
 
 for pacote in "${pacotes[@]}"; do
 if ! pacman -Qi "$pacote" > /dev/null 2>&1; then
