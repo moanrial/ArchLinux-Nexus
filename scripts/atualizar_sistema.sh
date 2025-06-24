@@ -26,7 +26,8 @@ info "[2/2] A limpar cache de pacotes antigos..."
 # Verificar se o comando paccache existe
 if ! command -v paccache >/dev/null 2>&1; then
 info "O comando 'paccache' não foi encontrado. A instalar 'pacman-contrib'..."
-sudo pacman -S --noconfirm pacman-contrib reflector
+sudo pacman -S --noconfirm pacman-contrib 
+sudo pacman -S --noconfirm reflector
 fi
 
 # Executar a limpeza com segurança (manter 2 versões)
