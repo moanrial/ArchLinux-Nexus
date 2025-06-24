@@ -13,13 +13,16 @@ sudo pacman -Syu --noconfirm
 
 info "A remover pacotes órfãos (desnecessários)..."
 
-# Capturar órfãos
-orfãos=$(pacman -Qdtq)
-if [[ -n "$orfãos" ]]; then
-sudo pacman -Rdd --noconfirm $orfãos
+echo "[1/2] A remover dependências órfãs..."
+orphans=$(pacman -Qdtq)
+if [[ -n "$orphans" ]]; then
+  sudo pacman -Rns --noconfirm $orphans
 else
-info "Nenhum pacote órfão encontrado para remoção."
+  info "Nenhum pacote órfão encontrado."
 fi
+
+info "[2/2] A limpar cache de pacotes antigos..."
+sudo paccache -r -k2
 
 sucesso "Sistema atualizado e limpo com sucesso."
 sleep 1.5
