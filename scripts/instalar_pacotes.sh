@@ -79,6 +79,9 @@ fastfetch
 code
 jdk-openjdk
 firefox
+bluez
+bluez-utils
+bluez-deprecated-tools
 flatpak
 )
 
