@@ -3,9 +3,9 @@
 # main.sh
 
 #if [ "$INSTALLED_BY_INSTALL_SH" != "true" ]; then
-echo "Erro: Este script deve ser executado através do install.sh."
-exit 1
-fi
+#echo "Erro: Este script deve ser executado através do install.sh."
+#exit 1
+#fi
 
 # install.sh - Script de automatização pós-formatação para ArchLinux
 # Este script instala pacotes, flatpaks, configura localização, monta discos, etc.
