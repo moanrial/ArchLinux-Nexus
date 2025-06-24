@@ -100,8 +100,8 @@ gnome-shell-extension-gsconnect
 gnome-shell-extension-dash-to-dock
 gnome-shell-extension-gamemode-git
 droidcam
-autenticacao-gov-pt
-plugin-autenticacao-gov-pt
+#autenticacao-gov-pt
+#plugin-autenticacao-gov-pt
 )
 
 for pacote in "${pacotesAUR[@]}"; do
