@@ -55,10 +55,10 @@ flatpak
 
 for pacote in "${pacotes[@]}"; do
 if ! pacman -Qi "$pacote" > /dev/null 2>&1; then
-  info "A instalar: $pacote"
-  sudo pacman -S --noconfirm "$pacote"
+info "A instalar: $pacote"
+sudo pacman -S --noconfirm "$pacote"
 else
-  info "$pacote já está instalado!"
+info "$pacote já está instalado!"
 fi
 done
 
@@ -77,7 +77,7 @@ plugin-autenticacao-gov-pt
 for pacote in "${pacotesAUR[@]}"; do
 if ! yay -Qi "$pacote" > /dev/null 2>&1; then
 info "A instalar: $pacote"
-sudo yay -S --noconfirm "$pacote"
+yay -S --noconfirm "$pacote"
 else
 info "$pacote já está instalado!"
 fi

@@ -11,23 +11,15 @@ fi
 info "A atualizar o sistema..."
 sudo pacman -Syu --noconfirm
 
-info "A remover pacotes desnecessários..."
-sudo pacman -Rdd $(pacman -Qdtq)
+info "A remover pacotes órfãos (desnecessários)..."
 
-pacotes=(
-avahi
-v4l-utils
-)
-
-for pacote in "${pacotes[@]}"; do
-if pacman -Q "$pacote" > /dev/null 2>&1; then
-info "A remover: $pacote"
-sudo pacman -Rns --noconfirm "$pacote"
-info "$pacote removido!"
+# Capturar órfãos
+orfãos=$(pacman -Qdtq)
+if [[ -n "$orfãos" ]]; then
+sudo pacman -Rdd --noconfirm $orfãos
 else
-info "$pacote já não está instalado."
+info "Nenhum pacote órfão encontrado para remoção."
 fi
-done
 
 sucesso "Sistema atualizado e limpo com sucesso."
 sleep 1.5
