@@ -2,11 +2,13 @@
 
 # install.sh
 export INSTALLED_BY_INSTALL_SH=true
+./main.sh
 
 # Diretório temporário
+USER="/home/arch"
 TMP_DIR="$USER/archlinux-nexus"
 ZIP_URL="https://github.com/moanrial/ArchLinux-Nexus/archive/refs/heads/main.zip"
-DIR_EXTRAIDO="$TMP_DIR/ArchLinux-Nexus-main"
+DIR_EXTRAIDO="$TMP_DIR/archlinux-nexus"
 
 # Verificações
 command -v curl >/dev/null 2>&1 || { echo "É necessário ter 'curl' instalado."; exit 1; }
