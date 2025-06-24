@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # instalar_pacotes.sh - Instalação de pacotes principais do utilizador
 
 instalar_pacotes() {
@@ -75,5 +73,3 @@ done
 sucesso "Finalizado."
 sleep 1.5
 }
-
-instalar_pacotes
