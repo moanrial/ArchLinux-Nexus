@@ -17,7 +17,7 @@ rm -rf "$TMP_DIR"
 fi
 
 # Eliminar pacotes não necessários
-sudo pacman -Rns --noconfirm yelp gnome-user-docks gnome-tour gnome-terminal epiphany
+sudo pacman -Rns --noconfirm yelp gnome-user-docs gnome-tour gnome-terminal epiphany
 
 sucesso "Finalizado."
 sleep 2
