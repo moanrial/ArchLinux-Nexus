@@ -117,6 +117,17 @@ source "$file"
 done
 }
 
+# Instalar YAY para ter acesso ao AUR
+instalar_yay(){
+sudo pacman -S --needed --noconfirm base-devel git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ..
+sudo rm -r yay
+sucesso "Instalação concluida."
+}
+
 # Ações finais
 limpeza_final() {
 sucesso "Instalação concluída."
