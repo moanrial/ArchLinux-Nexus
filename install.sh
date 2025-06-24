@@ -5,7 +5,8 @@ export INSTALLED_BY_INSTALL_SH=true
 ./main.sh
 
 # Diretório temporário
-TMP_DIR="/tmp/archlinux-nexus"
+USER="/home/arch"
+TMP_DIR="$USER/archlinux-nexus"
 ZIP_URL="https://github.com/moanrial/ArchLinux-Nexus/archive/refs/heads/main.zip"
 DIR_EXTRAIDO="$TMP_DIR/archlinux-nexus"
 

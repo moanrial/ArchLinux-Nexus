@@ -9,20 +9,20 @@ return
 fi
 
 info "A atualizar o sistema..."
-sudo dnf upgrade --refresh -y
+sudo pacman -Syu --noconfirm
 
 info "A remover pacotes desnecessários..."
-sudo dnf autoremove -y
+sudo pacman -Rdd $(pacman -Qdtq)
 
 pacotes=(
-gnome-tour.x86_64
-yelp.x86_64
+avahi
+v4l-utils
 )
 
 for pacote in "${pacotes[@]}"; do
-if rpm -q "$pacote" > /dev/null 2>&1; then
+if pacman -Q "$pacote" > /dev/null 2>&1; then
 info "A remover: $pacote"
-sudo dnf remove -y "$pacote"
+sudo pacman -Rns --noconfirm "$pacote"
 info "$pacote removido!"
 else
 info "$pacote já não está instalado."
