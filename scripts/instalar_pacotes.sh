@@ -22,9 +22,9 @@ pacman -Sy
 info "Repositório [multilib] ativado com sucesso."
 
 pacotes=(
-#ARCHLINUX
 amd-ucode
 linux-firmware-amdgpu
+linux-headers
 winetricks
 lutris
 thunderbird
@@ -47,19 +47,11 @@ mangohud
 libreoffice-fresh
 libreoffice-fresh-pt
 fastfetch
+code
 flatpak
 )
 
-#PACOTES FEDORA QUE NAO EXISTEM NO ARCH
-#steam-devices.noarch
-#gnome-extensions-app.x86_64
-#gnome-feeds.noarch
-#gnome-shell-extension-gsconnect.x86_64
-#gnome-shell-extension-dash-to-dock.noarch
-#gnome-shell-extension-gamemode.noarch
-#gnome-shell-extension-user-theme.noarch
-#libreoffice-help-pt-PT.x86_64
-#libreoffice-langpack-pt-PT.x86_64
+# Pacote normal
 
 for pacote in "${pacotes[@]}"; do
 if ! pacman -Qi "$pacote" > /dev/null 2>&1; then
@@ -70,6 +62,35 @@ else
 fi
 done
 
+# AUR
+
+pacotesAUR=(
+gnome-shell-extension-gsconnect
+gnome-shell-extension-dash-to-dock
+gnome-shell-extension-gamemode-git
+droidcam-git
+v4l2loopback-dkms-git
+autenticacao-gov-pt
+plugin-autenticacao-gov-pt
+)
+
+for pacote in "${pacotesAUR[@]}"; do
+if ! yay -Qi "$pacote" > /dev/null 2>&1; then
+info "A instalar: $pacote"
+sudo yay -S --noconfirm "$pacote"
+else
+info "$pacote já está instalado!"
+fi
+done
+
 sucesso "Finalizado."
 sleep 1.5
 }
+
+#PACOTES FEDORA QUE NAO EXISTEM NO ARCH
+#steam-devices.noarch
+#gnome-extensions-app.x86_64
+#gnome-feeds.noarch
+#gnome-shell-extension-user-theme.noarch
+#libreoffice-help-pt-PT.x86_64
+#libreoffice-langpack-pt-PT.x86_64

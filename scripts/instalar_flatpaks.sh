@@ -39,4 +39,3 @@ done
 sucesso "Flatpaks instalados com sucesso."
 sleep 1.5
 }
-
