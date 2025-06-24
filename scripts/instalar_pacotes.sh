@@ -62,9 +62,9 @@ flatpak
 #libreoffice-langpack-pt-PT.x86_64
 
 for pacote in "${pacotes[@]}"; do
-if ! pacman -Ss "$pacote" > /dev/null 2>&1; then
+if ! pacman -Qi "$pacote" > /dev/null 2>&1; then
   info "A instalar: $pacote"
-  sudo pacman -S -y "$pacote"
+  sudo pacman -S --noconfirm "$pacote"
 else
   info "$pacote já está instalado!"
 fi
