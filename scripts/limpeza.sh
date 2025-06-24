@@ -8,13 +8,16 @@ info "Limpeza cancelada pelo utilizador."
 return
 fi
 
-TMP_DIR="/tmp/fedora-nexus"
+TMP_DIR="./fedora-nexus"
 
 # Verifica se existe a pasta ./.tmp e remove
 if [ -d "$TMP_DIR" ]; then
 info "[INFO] Limpeza de ficheiros temporários..."
 rm -rf "$TMP_DIR"
 fi
+
+# Eliminar pacotes não necessários
+sudo pacman -R --noconfirm yelp gnome-tour gnome-terminal epiphany
 
 sucesso "Finalizado."
 sleep 2
