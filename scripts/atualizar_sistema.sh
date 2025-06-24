@@ -13,10 +13,10 @@ sudo pacman -Syu --noconfirm
 
 info "A remover pacotes órfãos (desnecessários)..."
 
-echo "[1/2] A remover dependências órfãs..."
-orphans=$(pacman -Qdtq)
-if [[ -n "$orphans" ]]; then
-sudo pacman -Rns --noconfirm $orphans
+info "[1/2] A remover dependências órfãs..."
+mapfile -t orphans < <(pacman -Qdtq)
+if [[ ${#orphans[@]} -gt 0 ]]; then
+sudo pacman -Rns --noconfirm "${orphans[@]}"
 else
 info "Nenhum pacote órfão encontrado."
 fi
