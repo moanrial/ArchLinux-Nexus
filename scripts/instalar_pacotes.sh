@@ -69,7 +69,6 @@ gamemode
 gufw
 gnome-shell-extension-appindicator
 gnome-shell-extension-caffeine
-gnome-shell-extension-vitals
 seahorse
 gnome-tweaks
 mangohud
